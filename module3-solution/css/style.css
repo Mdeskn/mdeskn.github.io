@@ -21,12 +21,13 @@ h2 {
 
 section {
     border: 1px solid #1c1c20;
-    margin-top: 7%;
+    margin-top: 2%;
     margin-bottom: 3%;
     padding: 5%;
     background-color: #f8f8e4;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .navbar-nav a {
@@ -56,4 +57,30 @@ body::before {
     );
     z-index: -1;
     opacity: 0.8;
+}
+
+/* Back to Top button style */
+.back-to-top {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #1c1c20;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+    background-color: #e4e4f8;
+}
+
+/* Hide only the menu in the navbar on desktop version */
+@media (min-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
 }
