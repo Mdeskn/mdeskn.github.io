@@ -8,11 +8,11 @@
 
 /* Container styles */
 .container {
-    border: 1px solid #ddd; /* Softer border color */
-    background-color: #F8F8F8; /* Light gray background */
+    background: linear-gradient(45deg, #f8e4e4, #f8eae4, #f8f8e4, #e4f8e7, #e4e4f8); /* Rainbow gradient effect */
+    border: 1px solid #ddd;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Title styles */
@@ -21,10 +21,10 @@ h3 {
     width: 30%;
     padding: 5px 0;
     text-align: center;
-    border-bottom: 1px solid #ddd; /* Softer border color */
-    border-left: 1px solid #ddd; /* Softer border color */
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
     font-size: 125%;
-    background-color: #FFD700; /* Pastel yellow background */
+    background-color: #e4f8e7; /* Updated background color */
 }
 
 /* Heading styles */
@@ -32,17 +32,17 @@ h1 {
     padding: 2%;
     text-align: center;
     font-size: 175%;
-    color: #3498db; /* Pastel blue text color */
-    background-color: #ecf0f1; /* Pastel blue background */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
-    border: 1px solid #ddd; /* Softer border color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    color: #f8e4e4; /* Updated text color */
+    background-color: #f8f8e4; /* Updated background color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-    color: #fff; /* White text on hover */
+    background-color: #e4e4f8;
+    color: #fff;
 }
 
 /* Paragraph styles */
