@@ -140,11 +140,16 @@
     count = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    if (!gameStarted) {
+      return;
+    }
+
     snake.x += snake.dx;
     snake.y += snake.dy;
 
     if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
-      gameOver();
+      gameStarted = false;
+      alert('Game Over! Press "Play" to start over.');
       return;
     }
 
@@ -168,7 +173,8 @@
 
       for (var i = index + 1; i < snake.cells.length; i++) {
         if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-          gameOver();
+          gameStarted = false;
+          alert('Game Over! Press "Play" to start over.');
           return;
         }
       }
@@ -187,11 +193,6 @@
     };
     placeApple();
     requestAnimationFrame(loop);
-  }
-
-  function gameOver() {
-    gameStarted = false;
-    alert('Game Over!');
   }
 
   document.addEventListener('keydown', function (e) {
@@ -214,7 +215,6 @@
     }
   });
 </script>
-
 
 </body>
 
