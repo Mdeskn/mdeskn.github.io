@@ -105,7 +105,8 @@
   var gameStarted = false;
   var gridSize = 20;
   var count = 0;
-  var speed = 100; // Adjust this value for the desired speed
+  var baseSpeed = 100; // Adjust this value for the base speed
+  var currentSpeed = baseSpeed;
 
   var snake = {
     x: 100,
@@ -133,7 +134,7 @@
   function loop() {
     requestAnimationFrame(loop);
 
-    if (gameStarted && ++count < speed) {
+    if (gameStarted && ++count < currentSpeed) {
       return;
     }
 
@@ -150,6 +151,7 @@
     if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
       gameStarted = false;
       alert('Game Over! Press "Play" to start over.');
+      currentSpeed = baseSpeed; // Reset speed on game over
       return;
     }
 
@@ -169,12 +171,17 @@
       if (cell.x === apple.x && cell.y === apple.y) {
         snake.maxCells++;
         placeApple();
+        currentSpeed -= 5; // Adjust this value for the speed increase
+        if (currentSpeed < 50) {
+          currentSpeed = 50; // Set a minimum speed
+        }
       }
 
       for (var i = index + 1; i < snake.cells.length; i++) {
         if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
           gameStarted = false;
           alert('Game Over! Press "Play" to start over.');
+          currentSpeed = baseSpeed; // Reset speed on game over
           return;
         }
       }
@@ -192,6 +199,7 @@
       maxCells: 4
     };
     placeApple();
+    currentSpeed = baseSpeed; // Reset speed on game start
     requestAnimationFrame(loop);
   }
 
