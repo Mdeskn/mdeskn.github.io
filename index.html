@@ -8,11 +8,25 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f8e4e4; /* Light pink background color */
+      background: linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5, #56CCF2, #2F80ED);
+      background-size: 400% 400%;
+      animation: gradient 15s infinite;
       margin: 0;
       padding: 0;
       text-align: center;
       overflow: hidden;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .fade-in {
@@ -66,6 +80,8 @@
 
     canvas {
       border: 1px solid #333;
+      background: rgba(0, 173, 181, 0.2); /* Blurred glass effect */
+      box-shadow: 0 0 10px rgba(0, 173, 181, 0.8); /* Shadow to distinguish from background */
     }
 
     button {
@@ -76,6 +92,24 @@
       color: #fff;
       font-size: 16px;
       cursor: pointer;
+    }
+
+    .animated-text {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #fff;
+      animation: slideIn 2s ease-in-out forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -95,102 +129,21 @@
   </nav>
 
   <main>
-  <canvas id="snakeCanvas" width="300" height="300"></canvas>
-  <button id="playButton" onclick="startGame()">Play</button>
-</main>
+    <canvas id="snakeCanvas" width="300" height="300"></canvas>
+    <button id="playButton" onclick="startGame()">Play</button>
+    <div class="animated-text">In case you're bored, you're welcome to play! ;)</div>
+  </main>
 
-<script>
-  var canvas = document.getElementById('snakeCanvas');
-  var ctx = canvas.getContext('2d');
-  var gameStarted = false;
-  var gridSize = 20;
-  var count = 0;
-  var baseSpeed = 100; // Adjust this value for the base speed
-  var currentSpeed = baseSpeed;
+  <script>
+    var canvas = document.getElementById('snakeCanvas');
+    var ctx = canvas.getContext('2d');
+    var gameStarted = false;
+    var gridSize = 20;
+    var count = 0;
+    var baseSpeed = 100; // Adjust this value for the base speed
+    var currentSpeed = baseSpeed;
 
-  var snake = {
-    x: 100,
-    y: 100,
-    dx: gridSize,
-    dy: 0,
-    cells: [],
-    maxCells: 4
-  };
-
-  var apple = {
-    x: 0,
-    y: 0
-  };
-
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function placeApple() {
-    apple.x = getRandomInt(0, (canvas.width / gridSize)) * gridSize;
-    apple.y = getRandomInt(0, (canvas.height / gridSize)) * gridSize;
-  }
-
-  function loop() {
-    requestAnimationFrame(loop);
-
-    if (gameStarted && ++count < currentSpeed) {
-      return;
-    }
-
-    count = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (!gameStarted) {
-      return;
-    }
-
-    snake.x += snake.dx;
-    snake.y += snake.dy;
-
-    if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
-      gameStarted = false;
-      alert('Game Over! Press "Play" to start over.');
-      currentSpeed = baseSpeed; // Reset speed on game over
-      return;
-    }
-
-    snake.cells.unshift({ x: snake.x, y: snake.y });
-
-    if (snake.cells.length > snake.maxCells) {
-      snake.cells.pop();
-    }
-
-    ctx.fillStyle = 'red';
-    ctx.fillRect(apple.x, apple.y, gridSize - 1, gridSize - 1);
-
-    ctx.fillStyle = '#00adb5';
-    snake.cells.forEach(function (cell, index) {
-      ctx.fillRect(cell.x, cell.y, gridSize - 1, gridSize - 1);
-
-      if (cell.x === apple.x && cell.y === apple.y) {
-        snake.maxCells++;
-        placeApple();
-        currentSpeed -= 5; // Adjust this value for the speed increase
-        if (currentSpeed < 50) {
-          currentSpeed = 50; // Set a minimum speed
-        }
-      }
-
-      for (var i = index + 1; i < snake.cells.length; i++) {
-        if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-          gameStarted = false;
-          alert('Game Over! Press "Play" to start over.');
-          currentSpeed = baseSpeed; // Reset speed on game over
-          return;
-        }
-      }
-    });
-  }
-
-  function startGame() {
-    gameStarted = true;
-    snake = {
+    var snake = {
       x: 100,
       y: 100,
       dx: gridSize,
@@ -198,31 +151,113 @@
       cells: [],
       maxCells: 4
     };
-    placeApple();
-    currentSpeed = baseSpeed; // Reset speed on game start
-    requestAnimationFrame(loop);
-  }
 
-  document.addEventListener('keydown', function (e) {
-    if (!gameStarted) {
-      return;
+    var apple = {
+      x: 0,
+      y: 0
+    };
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    if (e.which === 37 && snake.dx === 0) {
-      snake.dx = -gridSize;
-      snake.dy = 0;
-    } else if (e.which === 38 && snake.dy === 0) {
-      snake.dy = -gridSize;
-      snake.dx = 0;
-    } else if (e.which === 39 && snake.dx === 0) {
-      snake.dx = gridSize;
-      snake.dy = 0;
-    } else if (e.which === 40 && snake.dy === 0) {
-      snake.dy = gridSize;
-      snake.dx = 0;
+    function placeApple() {
+      apple.x = getRandomInt(0, (canvas.width / gridSize)) * gridSize;
+      apple.y = getRandomInt(0, (canvas.height / gridSize)) * gridSize;
     }
-  });
-</script>
+
+    function loop() {
+      requestAnimationFrame(loop);
+
+      if (gameStarted && ++count < currentSpeed) {
+        return;
+      }
+
+      count = 0;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if (!gameStarted) {
+        return;
+      }
+
+      snake.x += snake.dx;
+      snake.y += snake.dy;
+
+      if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
+        gameStarted = false;
+        alert('Game Over! Press "Play" to start over.');
+        currentSpeed = baseSpeed; // Reset speed on game over
+        return;
+      }
+
+      snake.cells.unshift({ x: snake.x, y: snake.y });
+
+      if (snake.cells.length > snake.maxCells) {
+        snake.cells.pop();
+      }
+
+      ctx.fillStyle = 'red'; // Change this color for the apple
+  ctx.fillRect(apple.x, apple.y, gridSize - 1, gridSize - 1);
+
+  ctx.fillStyle = 'white'; // Change this color for the snake
+  snake.cells.forEach(function (cell, index) {
+    ctx.fillRect(cell.x, cell.y, gridSize - 1, gridSize - 1);
+
+        if (cell.x === apple.x && cell.y === apple.y) {
+          snake.maxCells++;
+          placeApple();
+          currentSpeed -= 5; // Adjust this value for the speed increase
+          if (currentSpeed < 50) {
+            currentSpeed = 50; // Set a minimum speed
+          }
+        }
+
+        for (var i = index + 1; i < snake.cells.length; i++) {
+          if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+            gameStarted = false;
+            alert('Game Over! Press "Play" to start over.');
+            currentSpeed = baseSpeed; // Reset speed on game over
+            return;
+          }
+        }
+      });
+    }
+
+    function startGame() {
+      gameStarted = true;
+      snake = {
+        x: 100,
+        y: 100,
+        dx: gridSize,
+        dy: 0,
+        cells: [],
+        maxCells: 4
+      };
+      placeApple();
+      currentSpeed = baseSpeed; // Reset speed on game start
+      requestAnimationFrame(loop);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (!gameStarted) {
+        return;
+      }
+
+      if (e.which === 37 && snake.dx === 0) {
+        snake.dx = -gridSize;
+        snake.dy = 0;
+      } else if (e.which === 38 && snake.dy === 0) {
+        snake.dy = -gridSize;
+        snake.dx = 0;
+      } else if (e.which === 39 && snake.dx === 0) {
+        snake.dx = gridSize;
+        snake.dy = 0;
+      } else if (e.which === 40 && snake.dy === 0) {
+        snake.dy = gridSize;
+        snake.dx = 0;
+      }
+    });
+  </script>
 
 </body>
 
