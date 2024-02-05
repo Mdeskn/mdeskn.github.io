@@ -8,7 +8,6 @@ $(function () {
 });
 
 (function (global) {
-
   var dc = {};
 
   var homeHtmlUrl = "snippets/home-snippet.html";
@@ -21,17 +20,21 @@ $(function () {
   var menuItemsTitleHtml = "snippets/menu-items-title.html";
   var menuItemHtml = "snippets/menu-item.html";
 
+  // Convenience function for inserting innerHTML for 'select'
   var insertHtml = function (selector, html) {
     var targetElem = document.querySelector(selector);
     targetElem.innerHTML = html;
   };
 
+  // Show loading icon inside element identified by 'selector'.
   var showLoading = function (selector) {
     var html = "<div class='text-center'>";
     html += "<img src='images/ajax-loader.gif'></div>";
     insertHtml(selector, html);
   };
 
+  // Return substitute of '{{propName}}'
+  // with propValue in given 'string'
   var insertProperty = function (string, propName, propValue) {
     var propToReplace = "{{" + propName + "}}";
     string = string
@@ -39,6 +42,7 @@ $(function () {
     return string;
   };
 
+  // Remove the class 'active' from home and switch to Menu button
   var switchMenuToActive = function () {
     var classes = document.querySelector("#navHomeButton").className;
     classes = classes.replace(new RegExp("active", "g"), "");
@@ -56,8 +60,35 @@ $(function () {
     $ajaxUtils.sendGetRequest(
       allCategoriesUrl,
       buildAndShowHomeHTML,
-      true);
+      true
+    );
   });
+
+  function buildAndShowHomeHTML(categories) {
+    $ajaxUtils.sendGetRequest(
+      homeHtmlUrl,
+      function (homeHtml) {
+        var chosenCategory = chooseRandomCategory(categories);
+        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
+        insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+      },
+      false
+    );
+  }
+
+  function chooseRandomCategory(categories) {
+    var randomArrayIndex = Math.floor(Math.random() * categories.length);
+    return categories[randomArrayIndex];
+  }
+
+  // Load the menu categories view
+  dc.loadMenuCategories = function () {
+    showLoading("#main-content");
+    $ajaxUtils.sendGetRequest(
+      allCategoriesUrl,
+      buildAndShowCategoriesHTML
+    );
+  };
 
   function buildAndShowHomeHTML(categories) {
     $ajaxUtils.sendGetRequest(
