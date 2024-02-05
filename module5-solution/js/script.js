@@ -57,15 +57,12 @@ $(function () {
 
   document.addEventListener("DOMContentLoaded", function (event) {
     showLoading("#main-content");
-    $ajaxUtils.sendGetRequest(
-      allCategoriesUrl,
-      buildAndShowHomeHTML,
-      true
-    );
+    // Use $.get for making AJAX requests with jQuery
+    $.get(allCategoriesUrl, buildAndShowHomeHTML);
   });
 
   function buildAndShowHomeHTML(categories) {
-    $ajaxUtils.sendGetRequest(
+    $.get(
       homeHtmlUrl,
       function (homeHtml) {
         var chosenCategory = chooseRandomCategory(categories);
@@ -75,9 +72,8 @@ $(function () {
         insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
         // Fix the function call for menu items
-        $dc.loadMenuItems(chosenCategory.short_name);
-      },
-      false
+        dc.loadMenuItems(chosenCategory.short_name);
+      }
     );
   }
 
@@ -89,10 +85,7 @@ $(function () {
   // Load the menu categories view
   dc.loadMenuCategories = function () {
     showLoading("#main-content");
-    $ajaxUtils.sendGetRequest(
-      allCategoriesUrl,
-      buildAndShowCategoriesHTML
-    );
+    $.get(allCategoriesUrl, buildAndShowCategoriesHTML);
   };
 
   global.$dc = dc;
