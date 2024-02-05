@@ -57,12 +57,15 @@ $(function () {
 
   document.addEventListener("DOMContentLoaded", function (event) {
     showLoading("#main-content");
-    // Use $.get for making AJAX requests with jQuery
-    $.get(allCategoriesUrl, buildAndShowHomeHTML);
+    $ajaxUtils.sendGetRequest(
+      allCategoriesUrl,
+      buildAndShowHomeHTML,
+      true
+    );
   });
 
   function buildAndShowHomeHTML(categories) {
-    $.get(
+    $ajaxUtils.sendGetRequest(
       homeHtmlUrl,
       function (homeHtml) {
         var chosenCategory = chooseRandomCategory(categories);
@@ -73,7 +76,8 @@ $(function () {
 
         // Fix the function call for menu items
         dc.loadMenuItems(chosenCategory.short_name);
-      }
+      },
+      false
     );
   }
 
@@ -85,11 +89,19 @@ $(function () {
   // Load the menu categories view
   dc.loadMenuCategories = function () {
     showLoading("#main-content");
-    $.get(allCategoriesUrl, buildAndShowCategoriesHTML);
+    $ajaxUtils.sendGetRequest(
+      allCategoriesUrl,
+      buildAndShowCategoriesHTML
+    );
   };
+
+  function buildAndShowCategoriesHTML(categories) {
+    // Implement your logic for building and showing categories
+    console.log("Categories:", categories);
+  }
 
   global.$dc = dc;
 
   // Call loadMenuCategories once the script is loaded
-  $dc.loadMenuCategories();
+  dc.loadMenuCategories();
 })(window);
