@@ -69,8 +69,13 @@ $(function () {
       homeHtmlUrl,
       function (homeHtml) {
         var chosenCategory = chooseRandomCategory(categories);
+
         var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
+
         insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+
+        // Fix the function call for menu items
+        $dc.loadMenuItems(chosenCategory.short_name);
       },
       false
     );
@@ -90,27 +95,8 @@ $(function () {
     );
   };
 
-  function buildAndShowHomeHTML(categories) {
-    $ajaxUtils.sendGetRequest(
-      homeHtmlUrl,
-      function (homeHtml) {
-        var chosenCategory = chooseRandomCategory(categories);
-
-        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
-
-        insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-
-        // Fix the function call for menu items
-        $dc.loadMenuItems(chosenCategory.short_name);
-      },
-      false);
-  }
-
-  function chooseRandomCategory(categories) {
-    var randomArrayIndex = Math.floor(Math.random() * categories.length);
-    return categories[randomArrayIndex];
-  }
-
   global.$dc = dc;
 
+  // Call loadMenuCategories once the script is loaded
+  $dc.loadMenuCategories();
 })(window);
