@@ -63,11 +63,14 @@ $(function () {
     $ajaxUtils.sendGetRequest(
       homeHtmlUrl,
       function (homeHtml) {
-        var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
+        var chosenCategory = chooseRandomCategory(categories);
 
-        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
+        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
 
         insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+
+        // Fix the function call for menu items
+        $dc.loadMenuItems(chosenCategory.short_name);
       },
       false);
   }
