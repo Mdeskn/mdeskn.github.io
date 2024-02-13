@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <form id="recommendationForm">
+            <label for="genre">Enter your favorite movie genre:</label>
+            <input type="text" id="genre" name="genre" required>
+            <input type="submit" value="Get Recommendations">
+        </form>
+        <div id="recommendations">
+            <!-- Recommendations will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("recommendationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var genre = document.getElementById("genre").value;
+            fetchAndProcessIMDbData(genre);
+        });
+
+        function fetchAndProcessIMDbData(genre) {
+            fetch('https://datasets.imdbws.com/title.basics.tsv.gz')
+                .then(response => response.text())
+                .then(data => {
+                    let lines = data.split('\n');
+                    let recommendations = [];
+                    for (let i = 1; i < lines.length; i++) {
+                        let line = lines[i].split('\t');
+                        let title = line[2]; // Primary title
+                        let genres = line[8]; // Genres
+                        if (genres && genres.includes(genre)) {
+                            recommendations.push(title);
+                        }
+                    }
+                    displayRecommendations(recommendations);
+                })
+                .catch(error => {
+                    console.error('Error fetching IMDb dataset:', error);
+                });
+        }
+
+        function displayRecommendations(recommendations) {
+            var recommendationsDiv = document.getElementById("recommendations");
+            recommendationsDiv.innerHTML = "";
+            var ul = document.createElement("ul");
+            recommendations.forEach(function(movie) {
+                var li = document.createElement("li");
+                li.textContent = movie;
+                ul.appendChild(li);
+            });
+            recommendationsDiv.appendChild(ul);
+        }
+    </script>
+</body>
+</html>
