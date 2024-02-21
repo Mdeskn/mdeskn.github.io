@@ -10,7 +10,6 @@ body {
     padding: 0;
 }
 
-
 /* Container styles */
 .container {
     position: absolute;
@@ -43,7 +42,6 @@ body {
     flex-direction: column;
 }
 
-
 .quote-box {
     padding: 25px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -53,7 +51,7 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    width: calc(50% - 65px); /* Adjusted width to fit within the left half */
+    width: calc(50% - 30px); /* Adjusted width to fit within the left half */
     max-width: calc(100% - 80px); /* Adjusted max-width to prevent overflow */
     margin-right: 20px; /* Adjusted margin-right to create space between the quote box and the table */
     white-space: normal; /* Allow long quotes to wrap to the next line */
@@ -62,7 +60,7 @@ body {
     /* Center the quote box on the bottom left side */
     position: absolute;
     bottom: 20px;
-    left: 40px;
+    left: 20px;
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
@@ -84,12 +82,19 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     height: 100%;
-    box-sizing: border-box; /* Add box-sizing property */
-    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+    overflow-y: auto; /* Make notepad scrollable */
 }
-.notepad:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+
+.notepad ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
 }
+
+.notepad ul li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+    word-wrap: break-word; /* Ensure long text wraps inside the notepad box */
+}
+
 
 /* Typography */
 h1 {
@@ -111,11 +116,7 @@ td {
     text-align: center;
 }
 
-.day {
-    font-weight: bold;
-    font-size: 18px;
-}
-
+/* Adjusted table cell styling */
 .date {
     width: 50px;
     height: 50px;
@@ -129,11 +130,24 @@ td {
     color: #ff0000;
 }
 
-/* Calendar styles */
-.top-half {
-    padding: 20px;
+/* Add styling for the emoji layer */
+.emoji-layer {
+    position: absolute;
+    z-index: 999; /* Increase the z-index value */
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px;
 }
 
-.month {
-    text-align: center;
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.emoji-container button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
