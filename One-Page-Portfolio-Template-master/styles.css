@@ -162,6 +162,7 @@ td {
 
     .container {
         flex-direction: column;
+        display: flex;
         height: auto;
         padding: 20px;
         overflow-y: auto; /* Allow vertical scrolling */
@@ -173,12 +174,7 @@ td {
     }
 
     .quote-box {
-        position: static;
-        width: 100%;
-        max-width: none;
-        margin-right: 0;
-        margin-bottom: 20px;
-        padding: 15px; /* Add padding for spacing */
+        display: none;
     }
 
     .emoji-container {
