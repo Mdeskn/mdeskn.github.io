@@ -151,3 +151,27 @@ td {
     font-size: 20px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    /* Add your responsive styles here */
+    body {
+        background-image: none; /* Remove background image */
+    }
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        overflow-y: auto; /* Allow vertical scrolling */
+    }
+    .left-half,
+    .right-half {
+        width: 100%;
+    }
+    .quote-box {
+        position: static;
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
