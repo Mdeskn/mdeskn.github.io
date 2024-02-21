@@ -155,7 +155,7 @@ td {
 /* Media query for responsive mode */
 @media screen and (max-width: 768px) {
     body {
-        background-image: url("https://dl.dropboxusercontent.com/fi/6swu6dpoz3xkn0im8kbo2/Neutral-phone-background-HD-floral.jpg");
+        background-image: url("https://dl.dropboxusercontent.com/scl/fi/6swu6dpoz3xkn0im8kbo2/Neutral-phone-background-HD-floral.jpg?rlkey=b6ya2pg7snfs580g0gdd5fuyx&dl=0");
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -178,7 +178,7 @@ td {
         max-width: none;
         margin-right: 0;
         margin-bottom: 20px;
-        padding: 15px; /* Add padding for spacng */
+        padding: 15px; /* Add padding for spacing */
     }
 
     .emoji-container {
