@@ -152,26 +152,44 @@ td {
     cursor: pointer;
 }
 
+/* Media query for responsive mode */
 @media screen and (max-width: 768px) {
-    /* Add your responsive styles here */
     body {
-        background-image: none; /* Remove background image */
+        background-image: url("https://dl.dropboxusercontent.com/fi/6swu6dpoz3xkn0im8kbo2/Neutral-phone-background-HD-floral.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
+
     .container {
         flex-direction: column;
         height: auto;
-        padding: 10px;
+        padding: 20px;
         overflow-y: auto; /* Allow vertical scrolling */
     }
+
     .left-half,
     .right-half {
         width: 100%;
     }
+
     .quote-box {
         position: static;
         width: 100%;
         max-width: none;
         margin-right: 0;
         margin-bottom: 20px;
+        padding: 15px; /* Add padding for spacing */
+    }
+
+    .emoji-container {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .emoji-container button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; /* Make the emoji buttons circular */
+        font-size: 20px;
     }
 }
