@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+/* Global styles */
+body {
+    background-image: url("https://dl.dropboxusercontent.com/scl/fi/sshalkhtzxihflcbkiipz/5630655.jpg?rlkey=tibt5qrbkrwfar0z28p3jwc8r&dl=0");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Container styles */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1200px;
+    height: 80vh;
+    max-height: calc(100vh - 40px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Left half styles */
+.left-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right half styles */
+.right-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.quote-box {
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: 'Gloria Hallelujah', cursive;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: calc(50% - 65px); /* Adjusted width to fit within the left half */
+    max-width: calc(100% - 80px); /* Adjusted max-width to prevent overflow */
+    margin-right: 20px; /* Adjusted margin-right to create space between the quote box and the table */
+    white-space: normal; /* Allow long quotes to wrap to the next line */
+    overflow-wrap: break-word; /* Wrap long words within the quote box */
+    height: 25%;
+    /* Center the quote box on the bottom left side */
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+.quote-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.quote-box.loaded {
+  opacity: 1;
+}
+
+/* Notepad styles */
+.notepad {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 100%;
+    box-sizing: border-box; /* Add box-sizing property */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+.notepad:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Typography */
+h1 {
+    font-weight: 800;
+    margin: 1rem 0 0;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    background: transparent;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 0;
+    text-align: center;
+}
+
+.day {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.date {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.holiday {
+    color: #ff0000;
+}
+
+/* Calendar styles */
+.top-half {
+    padding: 20px;
+}
+
+.month {
+    text-align: center;
+}
