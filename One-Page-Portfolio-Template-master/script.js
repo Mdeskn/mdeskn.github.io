@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     try {
         const emojis = [
             "\uD83D\uDE42", // 🙂
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateCells = document.querySelectorAll(".date");
 
         dateCells.forEach(cell => {
-            cell.addEventListener("click", function(event) {
+            cell.addEventListener("click", function (event) {
                 // Clear previous emojis
                 emojiLayer.innerHTML = "";
 
@@ -25,15 +25,22 @@ document.addEventListener("DOMContentLoaded", function() {
                     const emojiButton = document.createElement("button");
                     emojiButton.innerHTML = emoji;
                     emojiButton.classList.add("emoji-btn"); // Add class to style emoji buttons
-                    emojiButton.addEventListener("click", function() {
+                    emojiButton.addEventListener("click", function () {
                         try {
                             const userInput = prompt("Enter your note:");
                             if (userInput !== null && userInput.trim() !== "") {
                                 const notepadList = document.querySelector(".notepad ul");
                                 const listItem = document.createElement("li");
-                                const day = cell.textContent.trim();
-                                const month = document.querySelector(".month").textContent.trim();
-                                listItem.innerHTML = `<span class="emoji">${emoji}</span> ${month} ${formatDay(day)}: ${userInput}`;
+                                listItem.innerHTML = `<span class="emoji">${emoji}</span> ${formatDate(cell)}: <span class="note-text">${userInput}</span>`;
+                                
+                                // Create edit and delete icons
+                                const editIcon = createEditIcon(listItem);
+                                const deleteIcon = createDeleteIcon(listItem);
+
+                                // Append icons to the list item
+                                listItem.appendChild(editIcon);
+                                listItem.appendChild(deleteIcon);
+
                                 notepadList.appendChild(listItem);
                                 emojiLayer.style.display = "none"; // Hide the emoji layer
                             }
@@ -58,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Close the emoji layer when clicking elsewhere on the page
-        document.addEventListener("click", function(event) {
+        document.addEventListener("click", function (event) {
             if (!emojiLayer.contains(event.target) && !isDateCell(event.target)) {
                 emojiLayer.style.display = "none"; // Hide the emoji layer
             }
@@ -70,15 +77,131 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Function to format the day number with the correct suffix
+        function formatDate(cell) {
+            const day = cell.textContent.trim();
+            const month = document.querySelector(".month").textContent.trim();
+            return `${month} ${formatDay(day)}`;
+        }
+
+        // Function to format the day number with the correct suffix
         function formatDay(day) {
             const exceptions = [11, 12, 13];
             const lastTwoDigits = day % 100;
             const lastDigit = day % 10;
-            const suffix = exceptions.includes(lastTwoDigits) ? "th" : 
-                           lastDigit === 1 ? "st" :
-                           lastDigit === 2 ? "nd" :
-                           lastDigit === 3 ? "rd" : "th";
+            const suffix = exceptions.includes(lastTwoDigits) ? "th" :
+                lastDigit === 1 ? "st" :
+                    lastDigit === 2 ? "nd" :
+                        lastDigit === 3 ? "rd" : "th";
             return day + suffix;
+        }
+
+        // Function to handle Edit button click
+        function handleEditButtonClick(listItem) {
+            const noteText = listItem.querySelector(".note-text");
+            const noteContent = noteText.textContent.trim();
+            const editInput = document.createElement("textarea");
+            editInput.classList.add("edit-input");
+            editInput.value = noteContent;
+            listItem.replaceChild(editInput, noteText);
+
+            // Create save icon
+            const saveIcon = createSaveIcon(listItem, editInput);
+
+            // Replace edit icon with save icon
+            const editIcon = listItem.querySelector(".edit-icon");
+            listItem.replaceChild(saveIcon, editIcon);
+        }
+
+        // Function to handle Save button click
+        function handleSaveButtonClick(listItem, editInput) {
+            console.log("Attempting to save edited note...");
+            try {
+                // Check if .note-text element exists
+                let noteText = listItem.querySelector(".note-text");
+                if (!noteText) {
+                    // If .note-text element does not exist, create it
+                    noteText = document.createElement("span");
+                    noteText.classList.add("note-text");
+                    listItem.appendChild(noteText);
+                }
+                // Update the content of .note-text
+                noteText.textContent = editInput.value;
+                
+                // Remove existing save icon
+                const existingSaveIcon = listItem.querySelector(".save-icon");
+                if (existingSaveIcon) {
+                    listItem.removeChild(existingSaveIcon);
+                }
+
+                // Recreate edit icon
+                const editIcon = createEditIcon(listItem);
+                
+                // Remove existing delete icon if present
+                const existingDeleteIcon = listItem.querySelector(".delete-icon");
+                if (existingDeleteIcon) {
+                    listItem.removeChild(existingDeleteIcon);
+                }
+                // Create delete icon
+                const deleteIcon = createDeleteIcon(listItem);
+                
+                // Append elements in the desired order
+                listItem.appendChild(editIcon);
+                listItem.appendChild(deleteIcon);
+            } catch (error) {
+                console.error("An error occurred while attempting to save the edited note:", error);
+            } finally {
+                // Remove edit input after saving
+                listItem.removeChild(editInput);
+            }
+        }
+
+        // Function to handle Delete button click
+        function handleDeleteButtonClick(listItem) {
+            try {
+                const notepadList = document.querySelector(".notepad ul");
+                notepadList.removeChild(listItem);
+            } catch (error) {
+                console.error("An error occurred while attempting to delete the note:", error);
+            }
+        }
+
+        // Function to create edit icon
+        function createEditIcon(listItem) {
+            const editIcon = document.createElement("img");
+            editIcon.src = "https://dl.dropboxusercontent.com/scl/fi/2ohpskxbkpu5i4vuqwfdv/edit.png?rlkey=9bu16i7ywtzaswpbnsh5pgity&dl=0";
+            editIcon.alt = "Edit";
+            editIcon.classList.add("icon", "edit-icon");
+            editIcon.addEventListener("click", function () {
+                // Handle edit functionality
+                handleEditButtonClick(listItem);
+            });
+            return editIcon;
+        }
+
+        // Function to create save icon
+        function createSaveIcon(listItem, editInput) {
+            const saveIcon = document.createElement("img");
+            saveIcon.src = "https://dl.dropboxusercontent.com/scl/fi/cloereb5qxgqh36yhwtg1/diskette.png?rlkey=otk379fodv3omxik57g72ltsj&dl=0";
+            saveIcon.alt = "Save";
+            saveIcon.classList.add("icon", "save-icon");
+            saveIcon.addEventListener("click", function () {
+                // Save edited note
+                handleSaveButtonClick(listItem, editInput);
+            });
+            return saveIcon;
+        }
+
+        // Function to create delete icon
+        function createDeleteIcon(listItem) {
+            const deleteIcon = document.createElement("img");
+            deleteIcon.src = "https://dl.dropboxusercontent.com/scl/fi/xeyyqsxw0t80tw5dx9nub/bin.png?rlkey=q1w7v4sd783ufvhb7hn2ezx1e&dl=0";
+            deleteIcon.alt = "Delete";
+            deleteIcon.classList.add("icon", "delete-icon");
+            deleteIcon.addEventListener("click", function () {
+                // Handle delete functionality
+                handleDeleteButtonClick(listItem);
+            });
+            return deleteIcon;
         }
 
         const quoteBox = document.querySelector(".quote-box");

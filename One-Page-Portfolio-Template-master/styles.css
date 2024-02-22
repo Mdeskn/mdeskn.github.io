@@ -214,6 +214,20 @@ td {
   transform: rotate(320deg) translateY(-50px) rotate(-320deg);
 }
 
+/* Add this CSS to make the icons transparent by default */
+.icon {
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    opacity: 0.5; /* Set default opacity */
+    transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+/* Add this CSS to make the icons fully visible on hover */
+.icon:hover {
+    opacity: 1; /* Set full opacity on hover */
+}
+
 
 /* Media query for responsive mode */
 @media screen and (max-width: 768px) {
