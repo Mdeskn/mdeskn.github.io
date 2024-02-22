@@ -126,7 +126,14 @@ td {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: font-size 0.3s ease, font-weight 0.3s ease; /* Add transition property */
 }
+
+.date:hover {
+    font-size: 30px; /* Increase font size on hover */
+    font-weight: bold; /* Add bold font weight on hover */
+}
+
 
 .holiday {
     color: #ff0000;
@@ -158,7 +165,7 @@ td {
 
 .emoji-btn:hover {
     opacity: 1;
-    transform: scale(1.2); /* Enlarge the emoji when hovering */
+     transform: scale(1.5); /* Enlarge the emoji when hovering */
 }
 
 .emoji-layer .emoji-btn {
@@ -180,31 +187,31 @@ td {
 
 /* Adjusted position of the emojis in the circle layout */
 .emoji-layer .emoji-btn:nth-child(1) {
-  transform: rotate(0deg) translateY(-80px) rotate(0deg);
+  transform: rotate(0deg) translateY(-50px) rotate(0deg);
 }
 .emoji-layer .emoji-btn:nth-child(2) {
-  transform: rotate(40deg) translateY(-80px) rotate(-40deg);
+  transform: rotate(40deg) translateY(-50px) rotate(-40deg);
 }
 .emoji-layer .emoji-btn:nth-child(3) {
-  transform: rotate(80deg) translateY(-80px) rotate(-80deg);
+  transform: rotate(80deg) translateY(-50px) rotate(-80deg);
 }
 .emoji-layer .emoji-btn:nth-child(4) {
-  transform: rotate(120deg) translateY(-80px) rotate(-120deg);
+  transform: rotate(120deg) translateY(-50px) rotate(-120deg);
 }
 .emoji-layer .emoji-btn:nth-child(5) {
-  transform: rotate(160deg) translateY(-80px) rotate(-160deg);
+  transform: rotate(160deg) translateY(-50px) rotate(-160deg);
 }
 .emoji-layer .emoji-btn:nth-child(6) {
-  transform: rotate(200deg) translateY(-80px) rotate(-200deg);
+  transform: rotate(200deg) translateY(-50px) rotate(-200deg);
 }
 .emoji-layer .emoji-btn:nth-child(7) {
-  transform: rotate(240deg) translateY(-80px) rotate(-240deg);
+  transform: rotate(240deg) translateY(-50px) rotate(-240deg);
 }
 .emoji-layer .emoji-btn:nth-child(8) {
-  transform: rotate(280deg) translateY(-80px) rotate(-280deg);
+  transform: rotate(280deg) translateY(-50px) rotate(-280deg);
 }
 .emoji-layer .emoji-btn:nth-child(9) {
-  transform: rotate(320deg) translateY(-80px) rotate(-320deg);
+  transform: rotate(320deg) translateY(-50px) rotate(-320deg);
 }
 
 
@@ -217,8 +224,9 @@ td {
     }
 
     .container {
-        flex-direction: column;
+
         display: flex;
+        flex-direction: column;
         height: auto;
         padding: 20px;
         overflow-y: auto; /* Allow vertical scrolling */
@@ -230,18 +238,58 @@ td {
     }
 
     .quote-box {
-        display: none;
+        display: none; /* Hide quote box in responsive mode */
     }
 
-    .emoji-container {
-        justify-content: center;
-        gap: 0px;
+    /* Inherit styles from desktop mode for emoji-related classes */
+    .emoji-layer {
+        /* Copy styles from desktop mode */
     }
 
-    .emoji-container button {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%; /* Make the emoji buttons circular */
-        font-size: 20px;
+    .emoji-layer .emoji-btn {
+        /* Copy styles from desktop mode */
     }
+
+    .emoji-layer .emoji-btn:hover {
+        /* Copy styles from desktop mode */
+    }
+
+    .emoji-layer .emoji-btn:hover .emoji {
+        /* Copy styles from desktop mode */
+    }
+
+    .emoji-layer .emoji-btn .emoji {
+        /* Copy styles from desktop mode */
+    }
+
+    /* Adjusted position of the emojis in the circle layout */
+    .emoji-layer .emoji-btn:nth-child(1) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(2) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(3) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(4) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(5) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(6) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(7) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(8) {
+        /* Copy position adjustments from desktop mode */
+    }
+    .emoji-layer .emoji-btn:nth-child(9) {
+        /* Copy position adjustments from desktop mode */
+    }     
+        
+    /* Repeat for other emoji positions */
 }
