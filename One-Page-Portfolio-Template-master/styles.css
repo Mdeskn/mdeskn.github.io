@@ -13,6 +13,7 @@ body {
 /* Container styles */
 .container {
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -88,6 +89,7 @@ body {
 .notepad ul {
     list-style-type: none; /* Remove default list styles */
     padding: 0;
+    text-align: left;
 }
 
 .notepad ul li {
@@ -130,34 +132,88 @@ td {
     color: #ff0000;
 }
 
-/* Add styling for the emoji layer */
 .emoji-layer {
     position: absolute;
-    z-index: 999; /* Increase the z-index value */
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    z-index: 999;
     padding: 5px;
-}
-
-.emoji-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
 }
-.emoji-container button {
-    background: none;
+
+.emoji-btn {
+    background-color: transparent;
     border: none;
-    font-size: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
 }
+
+.emoji-btn:hover {
+    opacity: 1;
+    transform: scale(1.2); /* Enlarge the emoji when hovering */
+}
+
+.emoji-layer .emoji-btn {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+.emoji-btn:hover .emoji {
+    transform: scale(1.2); /* Enlarge the emoji when hovering */
+}
+
+.emoji-btn .emoji {
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+/* Adjusted position of the emojis in the circle layout */
+.emoji-layer .emoji-btn:nth-child(1) {
+  transform: rotate(0deg) translateY(-80px) rotate(0deg);
+}
+.emoji-layer .emoji-btn:nth-child(2) {
+  transform: rotate(40deg) translateY(-80px) rotate(-40deg);
+}
+.emoji-layer .emoji-btn:nth-child(3) {
+  transform: rotate(80deg) translateY(-80px) rotate(-80deg);
+}
+.emoji-layer .emoji-btn:nth-child(4) {
+  transform: rotate(120deg) translateY(-80px) rotate(-120deg);
+}
+.emoji-layer .emoji-btn:nth-child(5) {
+  transform: rotate(160deg) translateY(-80px) rotate(-160deg);
+}
+.emoji-layer .emoji-btn:nth-child(6) {
+  transform: rotate(200deg) translateY(-80px) rotate(-200deg);
+}
+.emoji-layer .emoji-btn:nth-child(7) {
+  transform: rotate(240deg) translateY(-80px) rotate(-240deg);
+}
+.emoji-layer .emoji-btn:nth-child(8) {
+  transform: rotate(280deg) translateY(-80px) rotate(-280deg);
+}
+.emoji-layer .emoji-btn:nth-child(9) {
+  transform: rotate(320deg) translateY(-80px) rotate(-320deg);
+}
+
 
 /* Media query for responsive mode */
 @media screen and (max-width: 768px) {
     body {
         background-image: url("https://dl.dropboxusercontent.com/scl/fi/6swu6dpoz3xkn0im8kbo2/Neutral-phone-background-HD-floral.jpg?rlkey=b6ya2pg7snfs580g0gdd5fuyx&dl=0");
         background-size: cover;
-        background-repeat: no-repeat;
+        background-repeat: round;
     }
 
     .container {
@@ -179,7 +235,7 @@ td {
 
     .emoji-container {
         justify-content: center;
-        gap: 10px;
+        gap: 0px;
     }
 
     .emoji-container button {

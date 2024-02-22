@@ -11,48 +11,51 @@ document.addEventListener("DOMContentLoaded", function() {
         "\uD83E\uDDE1"  // 🧡
     ];
 
-    const emojiLayer = document.createElement("div");
-    emojiLayer.classList.add("emoji-layer");
-    document.body.appendChild(emojiLayer);
-
-    // Set the emoji layer to a fixed position on the page
-    emojiLayer.style.position = "fixed";
-    emojiLayer.style.top = "-100px"; // Initially off-screen
-    emojiLayer.style.left = "0";
-
+    const emojiLayer = document.querySelector(".emoji-layer");
     const dateCells = document.querySelectorAll(".date");
+
     dateCells.forEach(cell => {
         cell.addEventListener("click", function(event) {
-            const emojiContainer = document.createElement("div");
-            emojiContainer.classList.add("emoji-container");
+            // Clear previous emojis
+            emojiLayer.innerHTML = "";
+
+            // Create buttons for each emoji
             emojis.forEach(emoji => {
                 const emojiButton = document.createElement("button");
                 emojiButton.innerHTML = emoji;
+                emojiButton.classList.add("emoji-btn"); // Add class to style emoji buttons
                 emojiButton.addEventListener("click", function() {
                     const userInput = prompt("Enter your note:");
                     if (userInput !== null && userInput.trim() !== "") {
                         const notepadList = document.querySelector(".notepad ul");
                         const listItem = document.createElement("li");
                         const day = cell.textContent.trim();
-                        const month = cell.closest('.container').querySelector('.month').textContent.trim();
+                        const month = document.querySelector(".month").textContent.trim();
                         listItem.innerHTML = `<span class="emoji">${emoji}</span> ${month} ${formatDay(day)}: ${userInput}`;
                         notepadList.appendChild(listItem);
-                        emojiLayer.style.top = "-100px"; // Hide the emoji layer
+                        emojiLayer.style.display = "none"; // Hide the emoji layer
                     }
                 });
-                emojiContainer.appendChild(emojiButton);
+                emojiLayer.appendChild(emojiButton);
             });
-            emojiLayer.innerHTML = "";
-            emojiLayer.appendChild(emojiContainer);
-            emojiLayer.style.top = `${event.clientY}px`; // Position the emoji layer below the cursor
-            emojiLayer.style.left = `${event.clientX}px`; // Position the emoji layer below the cursor
+
+            // Calculate the position of the emoji layer relative to the clicked cell
+            const containerRect = document.querySelector(".container").getBoundingClientRect();
+            const tableRect = cell.closest("table").getBoundingClientRect();
+            const offsetX = tableRect.left - containerRect.left + cell.offsetLeft + cell.offsetWidth / 2;
+            const offsetY = tableRect.top - containerRect.top + cell.offsetTop + cell.offsetHeight / 2;
+
+            // Position the emoji layer relative to the clicked cell
+            emojiLayer.style.top = `${offsetY}px`;
+            emojiLayer.style.left = `${offsetX}px`;
+            emojiLayer.style.display = "block"; // Show the emoji layer
         });
     });
 
     // Close the emoji layer when clicking elsewhere on the page
     document.addEventListener("click", function(event) {
         if (!emojiLayer.contains(event.target) && !isDateCell(event.target)) {
-            emojiLayer.style.top = "-100px"; // Hide the emoji layer
+            emojiLayer.style.display = "none"; // Hide the emoji layer
         }
     });
 
