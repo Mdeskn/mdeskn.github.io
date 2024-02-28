@@ -2,7 +2,7 @@
 
 /* Global styles */
 body {
-    background-image: url("assets\5630655.jpg");
+    background-image: url("assets/5630655.jpg"); /* Adjusted path */
     background-size: cover; /* Ensure the background image covers the entire container */
     background-repeat: no-repeat;
     font-family: "Poppins", serif;
@@ -242,11 +242,29 @@ td {
         background-color: transparent;
     }
 }
+.edit-icon,
+.save-icon,
+.delete-icon {
+    display: inline-flex;
+    width: 16px; /* Set the width of the icons */
+    height: 16px; /* Set the height of the icons */
+    margin-left: 4px;
+    padding: auto;
+    opacity: 0.5; /* Set initial opacity of the icons */
+    transition: opacity 0.3s ease; /* Add transition effect for opacity */
+    cursor: pointer; /* Set cursor to pointer for interaction */
+}
+
+.edit-icon:hover,
+.save-icon:hover,
+.delete-icon:hover {
+    opacity: 1; /* Set opacity to 1 on hover */
+}
 
 /* Media query for responsive mode */
 @media screen and (max-width: 768px) {
     body {
-        background-image: url("assets/Neutral\ phone\ background\ HD\ floral.jpg");
+        background-image: url("assets/Neutral%20phone%20background%20HD%20floral.jpg"); /* Adjusted path */
         background-size: cover;
         background-repeat: round;
     }

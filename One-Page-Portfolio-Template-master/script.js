@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Function to create Edit icon
         function createEditIcon(listItem) {
             const editIcon = document.createElement("img");
-            editIcon.src = "assets\edit.png"; // Replace "path_to_edit_image.png" with the actual path to your edit image
+            editIcon.src = "assets/edit.png"; // Replace "path_to_edit_image.png" with the actual path to your edit image
             editIcon.classList.add("edit-icon");
             editIcon.addEventListener("click", function () {
                 handleEditButtonClick(listItem);
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Function to create Save icon
         function createSaveIcon(listItem) {
             const saveIcon = document.createElement("img");
-            saveIcon.src = "assets\diskette.png"; // Replace "path_to_save_image.png" with the actual path to your save image
+            saveIcon.src = "assets/diskette.png"; // Replace "path_to_save_image.png" with the actual path to your save image
             saveIcon.classList.add("save-icon");
             saveIcon.addEventListener("click", function () {
                 saveEditedNote(listItem);
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Function to create Delete icon
         function createDeleteIcon(listItem) {
             const deleteIcon = document.createElement("img");
-            deleteIcon.src = "assets\bin.png"; // Replace "path_to_delete_image.png" with the actual path to your delete image
+            deleteIcon.src = "assets/bin.png"; // Replace "path_to_delete_image.png" with the actual path to your delete image
             deleteIcon.classList.add("delete-icon");
             deleteIcon.addEventListener("click", function () {
                 handleDeleteButtonClick(listItem);
