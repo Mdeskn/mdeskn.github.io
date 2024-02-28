@@ -1,0 +1,664 @@
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\assets
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\file_list.txt
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\index.html
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\script.js
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\styles.css
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\assets\5630655.jpg
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\assets\bin.png
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\assets\diskette.png
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\assets\edit.png
+C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\assets\Neutral phone background HD floral.jpg
+----------------------------------------
+Content of C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holistic Planning Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-half">
+            <div class="top-half">
+                <h1 class="month">January</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="data-day">Sun</th>
+                            <th class="data-day">Mon</th>
+                            <th class="data-day">Tue</th>
+                            <th class="data-day">Wed</th>
+                            <th class="data-day">Thu</th>
+                            <th class="data-day">Fri</th>
+                            <th class="data-day">Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="data-day date"></td>                           
+                            <td class="data-day date" id="2024-01-01">1 <span class="emoji"></span></td>
+                            <td class="data-day date holiday" id="2024-01-02">2 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-03">3 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-04">4 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-05">5 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-06">6 <span class="emoji"></span></td>
+                        </tr>
+                        <tr>
+                           
+                            <td class="data-day date" id="2024-01-08">8 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-09">9 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-10">10 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-11">11 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-12">12 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-13">13 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-14">14 <span class="emoji"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="data-day date" id="2024-01-15">15 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-16">16 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-17">17 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-18">18 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-19">19 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-20">20 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-21">21 <span class="emoji"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="data-day date" id="2024-01-22">22 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-23">23 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-24">24 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-25">25 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-26">26 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-27">27 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-28">28 <span class="emoji"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="data-day date" id="2024-01-29">29 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-30">30 <span class="emoji"></span></td>
+                            <td class="data-day date" id="2024-01-31">31 <span class="emoji"></span></td>
+                            <td class="data-day date"></td>
+                            <td class="data-day date"></td>
+                            <td class="data-day date"></td>
+                            <td class="data-day date"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bottom-half">
+                <div class="quote-box">
+                    <h4>Inspirational Quotes</h4>
+                    <p id="quote"></p>
+                </div>
+            </div>
+        </div>
+        <div class="right-half">
+            <div class="notepad">
+                <h2>Notepad</h2>
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <div class="emoji-layer"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+----------------------------------------
+----------------------------------------
+Content of C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\styles.css:
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
+
+/* Global styles */
+body {
+    background-image: url("/assets/5630655.jpg");
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-repeat: no-repeat;
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1200px;
+    height: 80vh;
+    max-height: calc(100vh - 40px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Left half styles */
+.left-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right half styles */
+.right-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-box {
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: 'Gloria Hallelujah', cursive;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: calc(50% - 30px); /* Adjusted width to fit within the left half */
+    max-width: calc(100% - 80px); /* Adjusted max-width to prevent overflow */
+    margin-right: 20px; /* Adjusted margin-right to create space between the quote box and the table */
+    white-space: normal; /* Allow long quotes to wrap to the next line */
+    overflow-wrap: break-word; /* Wrap long words within the quote box */
+    height: 25%;
+    /* Center the quote box on the bottom left side */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+.quote-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.quote-box.loaded {
+    opacity: 1;
+}
+
+/* Notepad styles */
+.notepad {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 100%;
+    overflow-y: auto; /* Make notepad scrollable */
+}
+
+.notepad ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+    text-align: left;
+}
+
+.notepad ul li {
+    margin-bottom: 10px; /* Add some spacing between list items */
+    word-wrap: break-word; /* Ensure long text wraps inside the notepad box */
+}
+
+/* Typography */
+h1 {
+    font-weight: 800;
+    margin: 1rem 0 0;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    background: transparent;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 0;
+    text-align: center;
+}
+
+/* Adjusted table cell styling */
+.date {
+    position: relative; /* Add position relative for absolute positioning */
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: font-size 0.3s ease, font-weight 0.3s ease; /* Add transition property */
+}
+
+.date:hover {
+    font-weight: bold; /* Make the font bold on hover */
+}
+
+.date .emoji {
+    position: absolute;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.date .emoji:first-child {
+    top: 5px;
+    left: 5px;
+}
+
+.date .emoji:nth-child(2) {
+    bottom: 5px;
+    left: 5px;
+}
+
+
+.date .emoji.active {
+    opacity: 1; /* Show emoji when active */
+}
+
+.holiday {
+    color: #ff0000;
+}
+
+.emoji-layer {
+    position: absolute;
+    z-index: 1;
+    padding: 5px;
+    display: none;
+}
+
+.emoji-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.emoji-btn:hover {
+    opacity: 1;
+    transform: scale(1.5); /* Enlarge the emoji when hovering */
+}
+
+.emoji-layer .emoji-btn {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+.emoji-btn:hover .emoji {
+    transform: scale(1.2); /* Enlarge the emoji when hovering */
+}
+
+.emoji-btn .emoji {
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+/* Adjusted position of the emojis in the circle layout */
+.emoji-layer .emoji-btn:nth-child(1) {
+    transform: rotate(0deg) translateY(-50px) rotate(0deg);
+}
+.emoji-layer .emoji-btn:nth-child(2) {
+    transform: rotate(40deg) translateY(-50px) rotate(-40deg);
+}
+.emoji-layer .emoji-btn:nth-child(3) {
+    transform: rotate(80deg) translateY(-50px) rotate(-80deg);
+}
+.emoji-layer .emoji-btn:nth-child(4) {
+    transform: rotate(120deg) translateY(-50px) rotate(-120deg);
+}
+.emoji-layer .emoji-btn:nth-child(5) {
+    transform: rotate(160deg) translateY(-50px) rotate(-160deg);
+}
+.emoji-layer .emoji-btn:nth-child(6) {
+    transform: rotate(200deg) translateY(-50px) rotate(-200deg);
+}
+.emoji-layer .emoji-btn:nth-child(7) {
+    transform: rotate(240deg) translateY(-50px) rotate(-240deg);
+}
+.emoji-layer .emoji-btn:nth-child(8) {
+    transform: rotate(280deg) translateY(-50px) rotate(-280deg);
+}
+.emoji-layer .emoji-btn:nth-child(9) {
+    transform: rotate(320deg) translateY(-50px) rotate(-320deg);
+}
+
+.highlight {
+    animation: highlight 2s linear;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Media query for responsive mode */
+@media screen and (max-width: 768px) {
+    body {
+        background-image: url("/assets/Neutral\ phone\ background\ HD\ floral.jpg");
+        background-size: cover;
+        background-repeat: round;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        overflow-y: auto; /* Allow vertical scrolling */
+    }
+
+    .left-half,
+    .right-half {
+        width: 100%;
+    }
+
+    .quote-box {
+        display: none; /* Hide quote box in responsive mode */
+    }
+}
+
+----------------------------------------
+----------------------------------------
+Content of C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master\script.js:
+document.addEventListener("DOMContentLoaded", function () {
+    try {
+        const emojis = [
+            "\uD83D\uDE42", // 🙂
+            "\uD83D\uDE41", // 🙁
+            "\uD83D\uDE04", // 🙄
+            "\uD83D\uDE2D", // 😭
+            "\uD83E\uDD73", // 🥳
+            "\uD83E\uDD27", // 🤧
+            "\uD83E\uDD70", // 🥰
+            "\uD83D\uDC8F", // 💏
+            "\uD83E\uDDE1"  // 🧡
+        ];
+
+        const emojiLayer = document.querySelector(".emoji-layer");
+        const dateCells = document.querySelectorAll(".date");
+
+        // Set data-note-id attribute for each date cell
+        dateCells.forEach(cell => {
+            const cellId = cell.id; // Use the same ID without "note_"
+            cell.setAttribute("data-note-id", cellId);
+        });
+
+        dateCells.forEach(cell => {
+            cell.addEventListener("click", function (event) {
+                // Clear previous emojis
+                emojiLayer.innerHTML = "";
+
+                // Create buttons for each emoji
+                emojis.forEach(emoji => {
+                    const emojiButton = document.createElement("button");
+                    emojiButton.innerHTML = emoji;
+                    emojiButton.classList.add("emoji-btn");
+                    emojiButton.addEventListener("click", function () {
+                        try {
+                            const userInput = prompt("Enter your note:");
+                            if (userInput !== null && userInput.trim() !== "") {
+                                const notepadList = document.querySelector(".notepad ul");
+                                const listItem = document.createElement("li");
+                                const uniqueId = "note_" + Date.now(); // Generate a unique ID based on the current timestamp
+                                listItem.setAttribute("id", uniqueId);
+                                const currentDateCellId = cell.getAttribute("data-note-id");
+                                listItem.setAttribute("data-note-id", currentDateCellId); // Set the same ID to the corresponding date cell
+                                listItem.innerHTML = `<span class="emoji">${emoji}</span> ${formatDate(cell)}: <span class="note-text">${userInput}</span>`;
+                    
+                                // Dynamically add the selected emoji icon to the clicked cell
+                                const emojiIcon = document.createElement("span");
+                                emojiIcon.innerHTML = emoji;
+                                emojiIcon.classList.add("emoji");
+                                cell.appendChild(emojiIcon);
+                    
+                                // Create edit and delete icons
+                                const editIcon = createEditIcon(listItem);
+                                const deleteIcon = createDeleteIcon(listItem);
+                    
+                                // Append icons to the list item
+                                listItem.appendChild(editIcon);
+                                listItem.appendChild(deleteIcon);
+                    
+                                notepadList.appendChild(listItem);
+                                emojiLayer.style.display = "none"; // Hide the emoji layer
+                    
+                                // Highlight corresponding note in the notepad when clicking on the emoji icon
+                                emojiIcon.addEventListener("click", function () {
+                                    listItem.scrollIntoView({ behavior: "smooth", block: "center" });
+                                    listItem.classList.add("highlight"); // Add highlight class
+                                    setTimeout(() => {
+                                        listItem.classList.remove("highlight"); // Remove highlight after 2 seconds
+                                    }, 2000);
+                                });
+                            }
+                        } catch (error) {
+                            console.error("An error occurred while processing user input:", error);
+                        }
+                    });
+                    
+                    emojiLayer.appendChild(emojiButton);
+                });
+
+                // Calculate the position of the emoji layer relative to the clicked cell
+                const containerRect = document.querySelector(".container").getBoundingClientRect();
+                const tableRect = cell.closest("table").getBoundingClientRect();
+                const offsetX = tableRect.left - containerRect.left + cell.offsetLeft + cell.offsetWidth / 2;
+                const offsetY = tableRect.top - containerRect.top + cell.offsetTop + cell.offsetHeight / 2;
+
+                // Position the emoji layer relative to the clicked cell
+                emojiLayer.style.top = `${offsetY}px`;
+                emojiLayer.style.left = `${offsetX}px`;
+                emojiLayer.style.display = "block"; // Show the emoji layer
+            });
+        });
+
+        // Close the emoji layer when clicking elsewhere on the page
+        document.addEventListener("click", function (event) {
+            if (!emojiLayer.contains(event.target) && !isDateCell(event.target)) {
+                emojiLayer.style.display = "none"; // Hide the emoji layer
+            }
+        });
+
+        // Function to check if the clicked element is a date cell
+        function isDateCell(element) {
+            return element.classList.contains("date");
+        }
+
+        // Function to format the day number with the correct suffix
+        function formatDate(cell) {
+            const day = cell.textContent.trim();
+            const month = document.querySelector(".month").textContent.trim();
+            return `${month} ${formatDay(day)}`;
+        }
+
+        // Function to format the day number with the correct suffix
+        function formatDay(day) {
+            const exceptions = [11, 12, 13];
+            const lastTwoDigits = day % 100;
+            const lastDigit = day % 10;
+            const suffix = exceptions.includes(lastTwoDigits) ? "th" :
+                lastDigit === 1 ? "st" :
+                lastDigit === 2 ? "nd" :
+                lastDigit === 3 ? "rd" : "th";
+            return day + suffix;
+        }
+
+        // Function to handle Edit button click
+        function handleEditButtonClick(listItem) {
+            const noteText = listItem.querySelector(".note-text");
+            const noteContent = noteText.textContent.trim();
+            const editInput = document.createElement("textarea");
+            editInput.classList.add("edit-input");
+            editInput.value = noteContent;
+            listItem.replaceChild(editInput, noteText);
+
+            // Create save icon
+            const saveIcon = createSaveIcon(listItem);
+
+            // Replace edit icon with save icon
+            const editIcon = listItem.querySelector(".edit-icon");
+            listItem.replaceChild(saveIcon, editIcon);
+
+            // Focus on the edit input
+            editInput.focus();
+
+            // Save edited note on pressing Enter key
+            editInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    saveEditedNote(listItem);
+                }
+            });
+
+            // Save edited note on clicking outside the edit input
+            editInput.addEventListener("focusout", function () {
+                saveEditedNote(listItem);
+            });
+        }
+
+        // Function to save edited note
+        function saveEditedNote(listItem) {
+            const editInput = listItem.querySelector(".edit-input");
+            const editedContent = editInput.value.trim();
+            if (editedContent !== "") {
+                const noteText = document.createElement("span");
+                noteText.classList.add("note-text");
+                noteText.textContent = editedContent;
+                listItem.replaceChild(noteText, editInput);
+
+                // Replace save icon with edit icon
+                const saveIcon = listItem.querySelector(".save-icon");
+                const editIcon = createEditIcon(listItem);
+                listItem.replaceChild(editIcon, saveIcon);
+            } else {
+                // If edited content is empty, remove the note and its emoji from the cell
+                listItem.remove();
+                const emoji = listItem.querySelector(".emoji");
+                if (emoji) {
+                    emoji.remove();
+                }
+            }
+        }
+
+// Function to handle Delete button click
+function handleDeleteButtonClick(listItem) {
+    console.log("Delete button clicked!");
+    
+    // Log the ID of the note
+    const noteId = listItem.getAttribute("id");
+    console.log("Note ID:", noteId);
+    
+    // Retrieve the corresponding date cell ID from the note
+    const dateCellId = listItem.getAttribute("data-note-id");
+    console.log("Date cell ID:", dateCellId);
+    
+    // Check if the date cell ID is valid
+    if (!dateCellId) {
+        console.error("Date cell ID not found for the note:", noteId);
+        return;
+    }
+    
+    // Retrieve the date cell using its ID
+    const dateCell = document.getElementById(dateCellId);
+    console.log("Date cell:", dateCell);
+    
+    // Check if the date cell is found
+    if (!dateCell) {
+        console.error("Date cell not found for ID:", dateCellId);
+        return;
+    }
+    
+    // Retrieve the emoji icon within the date cell
+    const emojiIcon = dateCell.querySelector(".emoji");
+    
+    // Check if the emoji icon is found
+    if (!emojiIcon) {
+        console.log("No emoji icon found for the date cell:", dateCellId);
+        return;
+    }
+    
+    // Remove the emoji icon from the date cell
+    emojiIcon.remove();
+    
+    // Remove the note's HTML element
+    listItem.remove();
+}
+               
+
+        // Function to create Edit icon
+        function createEditIcon(listItem) {
+            const editIcon = document.createElement("span");
+            editIcon.innerHTML = "&#9998;";
+            editIcon.classList.add("edit-icon");
+            editIcon.addEventListener("click", function () {
+                handleEditButtonClick(listItem);
+            });
+            return editIcon;
+        }
+
+        // Function to create Save icon
+        function createSaveIcon(listItem) {
+            const saveIcon = document.createElement("span");
+            saveIcon.innerHTML = "&#128190;";
+            saveIcon.classList.add("save-icon");
+            saveIcon.addEventListener("click", function () {
+                saveEditedNote(listItem);
+            });
+            return saveIcon;
+        }
+
+        // Function to create Delete icon
+        function createDeleteIcon(listItem) {
+            const deleteIcon = document.createElement("span");
+            deleteIcon.innerHTML = "&#10060;";
+            deleteIcon.classList.add("delete-icon");
+            deleteIcon.addEventListener("click", function () {
+                handleDeleteButtonClick(listItem);
+            });
+            return deleteIcon;
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+
+    // Set up inspirational quotes
+    const quoteBox = document.querySelector(".quote-box");
+    const quotes = [
+        "Believe you can and you're halfway there",
+        "The only way to do great work is to love what you do",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts",
+        "Hardships often prepare ordinary people for an extraordinary destiny",
+        "I can't change the direction of the wind, but I can adjust my sails to always reach my destination",
+        "No act of kindness, no matter how small, is ever wasted",
+        "What you get by achieving your goals is not as important as what you become by achieving your goals",
+        "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle",
+        "The future belongs to those who believe in the beauty of their dreams",
+        "The only limit to our realization of tomorrow will be our doubts of today",
+    ];
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    quoteBox.innerHTML = `<h4>Inspirational Quotes</h4><p>${randomQuote}</p>`;
+    quoteBox.classList.add("loaded");
+});
+
+----------------------------------------
