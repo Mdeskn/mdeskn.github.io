@@ -2,7 +2,7 @@
 
 /* Global styles */
 body {
-    background-image: url("/assets/5630655.jpg");
+    background-image: url("assets/5630655.jpg");
     background-size: cover; /* Ensure the background image covers the entire container */
     background-repeat: no-repeat;
     font-family: "Poppins", serif;
@@ -246,7 +246,7 @@ td {
 /* Media query for responsive mode */
 @media screen and (max-width: 768px) {
     body {
-        background-image: url("/assets/Neutral\ phone\ background\ HD\ floral.jpg");
+        background-image: url("assets/Neutral\ phone\ background\ HD\ floral.jpg");
         background-size: cover;
         background-repeat: round;
     }
