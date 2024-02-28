@@ -2,7 +2,7 @@
 
 /* Global styles */
 body {
-    background-image: url("assets/5630655.jpg");
+    background-image: url("assets\5630655.jpg");
     background-size: cover; /* Ensure the background image covers the entire container */
     background-repeat: no-repeat;
     font-family: "Poppins", serif;
