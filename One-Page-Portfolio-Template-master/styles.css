@@ -117,6 +117,16 @@ td {
     text-align: center;
 }
 
+/* CSS for Sundays and Saturdays */
+th.data-day:nth-child(1),
+th.data-day:nth-child(7),
+td.data-day:nth-child(1),
+td.data-day:nth-child(7) {
+    color: #ff3254; /* Soft pink text color */
+}
+
+
+
 /* Adjusted table cell styling */
 .date {
     position: relative; /* Add position relative for absolute positioning */
