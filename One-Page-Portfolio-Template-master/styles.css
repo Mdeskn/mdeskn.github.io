@@ -378,7 +378,7 @@ td.data-day:nth-child(7) {
         margin-right: 0; /* Remove right margin */
         margin-left: 0; /* Remove left margin */
         margin-bottom: 20px; /* Add margin-bottom */
-        max-height: calc(80vh - 40px); /* Set max-height to 80% of viewport height minus 40px */
+        height: 200px; /* Set a fixed height for the notepad */
     }
 
     /* Adjust font size for better readability */
