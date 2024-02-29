@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
-/* Global styles */
 body {
-    background-image: url("assets/5630655.jpg"); /* Adjusted path */
-    background-size: cover; /* Ensure the background image covers the entire container */
+    background-image: url("assets/5630655.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Poppins", sans-serif; /* Updated fallback font */
+    background-attachment: fixed; /* Background image remains fixed */
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -88,39 +88,46 @@ body {
    
 /* Container styles */
 .container {
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 1200px;
-    height: 80vh;
-    max-height: calc(100vh - 40px);
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    border-radius: 10px;
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: flex-start; /* Align items to the top */
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 1200px;
+    margin: 20px auto; /* Center the container */
+    position: absolute; /* Position absolutely */
+    text-align: center; /* Center align text */
+    top: 50%; /* Position at the vertical center */
+    left: 50%; /* Position at the horizontal center */
+    transform: translate(-50%, -50%); /* Center the container precisely */
+    width: 80%; /* Adjusted width */
+    max-width: 1200px; /* Maximum width */
+    height: 80vh; /* Adjusted height */
+    max-height: calc(100vh - 40px); /* Maximum height */
+    background: rgba(255, 255, 255, 0.5); /* Background color with transparency */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Box shadow */
+    border-radius: 10px; /* Border radius */
+    display: flex; /* Display as flex container */
+    gap: 20px; /* Gap between flex items */
+    padding: 20px; /* Padding */
 }
+
 
 /* Left half styles */
 .left-half {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+    width: 50%; /* Set initial width to 50% */
+    max-width: 50%; /* Set initial max-width to 50% */
 }
 
 /* Right half styles */
 .right-half {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+    width: 50%; /* Set initial width to 50% */
+    max-width: 50%; /* Set initial max-width to 50% */
 }
 
+/* Quote box styles */
 .quote-box {
-    padding: 25px;
+    padding: 15px; /* Adjusted padding */
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -128,21 +135,19 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    width: calc(50% - 30px); /* Adjusted width to fit within the left half */
-    max-width: calc(100% - 80px); /* Adjusted max-width to prevent overflow */
+    width: auto; /* Adjusted width to take up 50% of the container minus margins */
+    margin-top: 20px; /* Added margin to create space between elements */
     margin-right: 20px; /* Adjusted margin-right to create space between the quote box and the table */
+    margin-left: 20px;
     white-space: normal; /* Allow long quotes to wrap to the next line */
     overflow-wrap: break-word; /* Wrap long words within the quote box */
-    height: 25%;
-    /* Center the quote box on the bottom left side */
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
+    max-height: 50%; /* Limit maximum height */
+    font-size: 14px; /* Reduce font size for smaller content */
     transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
 }
+
+
+
 
 .quote-box:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
@@ -350,29 +355,85 @@ td.data-day:nth-child(7) {
 .delete-icon:hover {
     opacity: 1; /* Set opacity to 1 on hover */
 }
+/* Responsive mode */
 
-/* Media query for responsive mode */
-@media screen and (max-width: 768px) {
-    body {
-        background-image: url("assets/Neutral%20phone%20background%20HD%20floral.jpg"); /* Adjusted path */
-        background-size: cover;
-        background-repeat: round;
-    }
-
+@media only screen and (max-width: 768px) {
     .container {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-        overflow-y: auto; /* Allow vertical scrolling */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items horizontally */
     }
 
     .left-half,
     .right-half {
-        width: 100%;
+        width: 100%; /* Set width to 100% for full width */
+        max-width: none; /* Remove max-width constraint */
     }
 
-    .quote-box {
-        display: none; /* Hide quote box in responsive mode */
+    .notepad {
+        position: static; /* Remove absolute positioning */
+        overflow-y: auto;
+        width: 90%; /* Set width to 90% */
+        max-width: none; /* Remove max-width constraint */
+        margin-top: 20px; /* Adjust margin-top */
+        margin-right: 0; /* Remove right margin */
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 20px; /* Add margin-bottom */
+        max-height: calc(80vh - 40px); /* Set max-height to 80% of viewport height minus 40px */
+    }
+
+    /* Adjust font size for better readability */
+    h1 {
+        font-size: 24px;
+    }
+
+    /* Adjust table styles for smaller screens */
+    table {
+        margin-top: 10px; /* Reduce top margin */
+    }
+
+    /* Adjust date cell size for smaller screens */
+    .date {
+        width: 40px; /* Reduce width */
+        height: 40px; /* Reduce height */
+        font-size: 18px; /* Reduce font size */
+    }
+
+    .quote-box{
+        display: none;
+    }
+    /* Adjust position of emoji buttons for smaller screens */
+    .emoji-layer .emoji-btn {
+        width: 30px; /* Reduce button width */
+        height: 30px; /* Reduce button height */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    /* Adjust position of emojis in the circle layout for smaller screens */
+    .emoji-layer .emoji-btn:nth-child(1) {
+        transform: rotate(0deg) translateY(-30px) rotate(0deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(2) {
+        transform: rotate(45deg) translateY(-30px) rotate(-45deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(3) {
+        transform: rotate(90deg) translateY(-30px) rotate(-90deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(4) {
+        transform: rotate(135deg) translateY(-30px) rotate(-135deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(5) {
+        transform: rotate(180deg) translateY(-30px) rotate(-180deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(6) {
+        transform: rotate(225deg) translateY(-30px) rotate(-225deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(7) {
+        transform: rotate(270deg) translateY(-30px) rotate(-270deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(8) {
+        transform: rotate(315deg) translateY(-30px) rotate(-315deg);
+    }
+    .emoji-layer .emoji-btn:nth-child(9) {
+        transform: rotate(360deg) translateY(-30px) rotate(-360deg);
     }
 }
