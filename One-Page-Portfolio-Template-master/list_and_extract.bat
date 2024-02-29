@@ -1,5 +1,5 @@
 @echo off
-cd "C:\Users\Maede\mdeskn.github.io\One-Page-Portfolio-Template-master"
+cd "C:\Users\Maede\Desktop\One-Page-Portfolio-Template-master"
 
 echo Listing all folders and files...
 dir /s /b > file_list.txt
