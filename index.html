@@ -1,264 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Coursera Page</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(45deg, #FF3CAC, #784BA0, #2B86C5, #56CCF2, #2F80ED);
-      background-size: 400% 400%;
-      animation: gradient 15s infinite;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maede's Portfolio</title>
+    <!-- Link Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+    <link rel="stylesheet" href="css/aos.css">
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn ease-in-out 2s forwards;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    header {
-      background-color: #e4f8e7; /* Light green header background color */
-      padding: 1em;
-      color: #333; /* Dark gray text color */
-    }
-
-    nav {
-      background-color: #f8f8e4; /* Light yellow navigation background color */
-      padding: 1em;
-    }
-
-    nav a {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #333; /* Dark gray text color */
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    nav a:hover {
-      background-color: #e44d26; /* Orange background color on hover */
-      color: #fff; /* White text color on hover */
-    }
-
-    main {
-      padding: 2em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 60vh;
-    }
-
-    canvas {
-      border: 1px solid #333;
-      background: rgba(0, 173, 181, 0.2); /* Blurred glass effect */
-      box-shadow: 0 0 10px rgba(0, 173, 181, 0.8); /* Shadow to distinguish from background */
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border-radius: 30px;
-      background-color: #e44d26;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .animated-text {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #fff;
-      animation: slideIn 2s ease-in-out forwards;
-    }
-
-    @keyframes slideIn {
-      0% {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">   
+    <!-- Link Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <header>
-    <h1 class="fade-in">Hello Coursera</h1>
-  </header>
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="logo"><a href="#home">MDESKN</a></h1>
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#languages">Languages Spoken</a></li>
+                </ul>
+            </div>
+        </nav>
+</header>
 
-  <nav>
-    <a href="https://mdeskn.github.io/module2-solution/" target="_blank">Module 2 Assignment</a>
-    <a href="https://mdeskn.github.io/module3-solution/" target="_blank">Module 3 Assignment</a>
-    <a href="https://mdeskn.github.io/module4-solution/" target="_blank">Module 4 Assignment</a>
-    <a href="https://mdeskn.github.io/module5-solution/" target="_blank">Module 5 Assignment</a>
-    <a href="https://mdeskn.github.io/One-Page-Portfolio-Template-master/" target="_blank">Portfolio</a>
-    <a href="https://github.com/Mdeskn/mdeskn.github.io" target="_blank">My Repository</a>
-  </nav>
+<section id="about" class="about-section section">
+    <div class="about-content">
+        <h4>About Me</h4>
+        <div class="about-text">
+            <p>Hey there! I'm Mae, a Computer Software Engineering graduate deeply passionate about technology. Turning on my laptop is like stepping into a world of endless possibilities that never fails to bring me joy. Eager to pursue my master's degree in Computer Science or IT, I thrive on exploring the digital frontier and tackling challenges with enthusiasm. Yup! this is me :)</p>
+        </div>
+    </div>
+</section>
 
-  <main>
-    <canvas id="snakeCanvas" width="300" height="300"></canvas>
-    <button id="playButton" onclick="startGame()">Play</button>
-    <div class="animated-text">In case you're bored, you're welcome to play! ;)</div>
-  </main>
+<section id="education" class="education-section section">
+    <div class="education-content">
+        <h4>Education</h4>
+        <div class="education-box">
+            <div class="education-item">
+                <h5>High School Diploma</h5>
+                <p>My high school journey started at Mehr Technical and Vocational School, where I completed my High School Diploma in June 2013. It was a formative period where I laid the foundation for my future academic pursuits. While maintaining a GPA of 16.12/20, I cultivated a strong work ethic and a passion for learning that continues to guide me today.</p>
+            </div>
+            <div class="education-item">
+                <h5>Associate of Science (A.S.) in Computer Software</h5>
+                <p>My academic journey in the field of computer software began with an Associate of Science degree at Islamic Azad University, Sama Vocational/Polytechnic University of Borujerd branch in October 2015. During these two years, I immersed myself in the principles of software development and honed my skills through hands-on projects. Graduating with a GPA of 17.29/20 in June 2017 marked the culmination of my dedication and hard work.</p>
+            </div>
+            <div class="education-item">
+                <h5>Bachelor of Science (B.S.) in Computer Software Engineering</h5>
+                <p>I began my Bachelor of Science in Computer Software Engineering at Islamic Azad University, Central Tehran Branch in October 2021. Throughout my studies, I dedicated myself to mastering the fundamentals of software engineering and applied my knowledge to various projects. It was a challenging yet rewarding journey, and I'm proud to have graduated with a GPA of 17.99/20 in June 2023.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-  <script>
-    var canvas = document.getElementById('snakeCanvas');
-    var ctx = canvas.getContext('2d');
-    var gameStarted = false;
-    var gridSize = 20;
-    var count = 0;
-    var baseSpeed = 100; // Adjust this value for the base speed
-    var currentSpeed = baseSpeed;
+<footer class="section">
+    <div class="container">
+        <p>&copy; 2024 Maede Eskandari. All rights reserved.</p>
+        <p>This portfolio website was designed by Maede Eskandari Borujedi.</p>
+    </div>
+</footer>
 
-    var snake = {
-      x: 100,
-      y: 100,
-      dx: gridSize,
-      dy: 0,
-      cells: [],
-      maxCells: 4
-    };
-
-    var apple = {
-      x: 0,
-      y: 0
-    };
-
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    function placeApple() {
-      apple.x = getRandomInt(0, (canvas.width / gridSize)) * gridSize;
-      apple.y = getRandomInt(0, (canvas.height / gridSize)) * gridSize;
-    }
-
-    function loop() {
-      requestAnimationFrame(loop);
-
-      if (gameStarted && ++count < currentSpeed) {
-        return;
-      }
-
-      count = 0;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      if (!gameStarted) {
-        return;
-      }
-
-      snake.x += snake.dx;
-      snake.y += snake.dy;
-
-      if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
-        gameStarted = false;
-        alert('Game Over! Press "Play" to start over.');
-        currentSpeed = baseSpeed; // Reset speed on game over
-        return;
-      }
-
-      snake.cells.unshift({ x: snake.x, y: snake.y });
-
-      if (snake.cells.length > snake.maxCells) {
-        snake.cells.pop();
-      }
-
-      ctx.fillStyle = 'red'; // Change this color for the apple
-  ctx.fillRect(apple.x, apple.y, gridSize - 1, gridSize - 1);
-
-  ctx.fillStyle = 'white'; // Change this color for the snake
-  snake.cells.forEach(function (cell, index) {
-    ctx.fillRect(cell.x, cell.y, gridSize - 1, gridSize - 1);
-
-        if (cell.x === apple.x && cell.y === apple.y) {
-          snake.maxCells++;
-          placeApple();
-          currentSpeed -= 5; // Adjust this value for the speed increase
-          if (currentSpeed < 50) {
-            currentSpeed = 50; // Set a minimum speed
-          }
-        }
-
-        for (var i = index + 1; i < snake.cells.length; i++) {
-          if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-            gameStarted = false;
-            alert('Game Over! Press "Play" to start over.');
-            currentSpeed = baseSpeed; // Reset speed on game over
-            return;
-          }
-        }
-      });
-    }
-
-    function startGame() {
-      gameStarted = true;
-      snake = {
-        x: 100,
-        y: 100,
-        dx: gridSize,
-        dy: 0,
-        cells: [],
-        maxCells: 4
-      };
-      placeApple();
-      currentSpeed = baseSpeed; // Reset speed on game start
-      requestAnimationFrame(loop);
-    }
-
-    document.addEventListener('keydown', function (e) {
-      if (!gameStarted) {
-        return;
-      }
-
-      if (e.which === 37 && snake.dx === 0) {
-        snake.dx = -gridSize;
-        snake.dy = 0;
-      } else if (e.which === 38 && snake.dy === 0) {
-        snake.dy = -gridSize;
-        snake.dx = 0;
-      } else if (e.which === 39 && snake.dx === 0) {
-        snake.dx = gridSize;
-        snake.dy = 0;
-      } else if (e.which === 40 && snake.dy === 0) {
-        snake.dy = gridSize;
-        snake.dx = 0;
-      }
-    });
-  </script>
+<script src="script.js"></script>
 
 </body>
 

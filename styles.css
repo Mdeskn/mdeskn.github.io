@@ -1,0 +1,243 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #000;
+    color: #fff;
+}
+
+html {
+    scroll-padding-top: 150px; /* This should be equal to or greater than the header's height */
+}
+ 
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+/* Header Styles */
+header {
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+    background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Higher than the z-index of any other content */
+    display: flex;
+    justify-content: space-between; /* Space out items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav {
+    top: 0;
+    z-index: 1; /* Ensure navbar stays on top of other content */
+    background-color: white; /* Add a background color to ensure visibility */
+    height: 4rem;
+    width: 100%;
+    border: 2px solid black;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+  
+
+.navbar-nav {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: orange;
+    transition: width 0.5s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: calc(100% - 1rem);
+}
+
+
+
+
+/* About Me Section */
+.about-section {
+    position: relative;
+    font-weight: 250;
+    width: 100%;
+    max-width: 1107.61px;
+    margin: 250px auto 0; /* Adjusted margin */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+/* About Me Title */
+.about-section h4 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 24px; /* Adjusted font size */
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+/* About Me Background */
+.about-section .about-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+
+/* Education Section */
+.education-section {
+    position: relative;
+    width: 100%;
+    max-width: 1115.4px;
+    margin: 100px auto 0; /* Adjusted margin */
+    padding: 20px;
+    box-sizing: border-box;
+}
+.education-section h4 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 24px; /* Adjusted font size */
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+/* Education Box */
+.education-section .education-box {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.education-section .education-item {
+    width: 350px; /* Adjusted width */
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 26px;
+    padding: 20px; /* Added padding */
+    text-align: center;
+}
+
+/* Education Text */
+.education-section .education-item h5 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.education-section .education-item p {
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.education-item {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 26px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s; /* Add transition for smooth scaling */
+}
+
+.education-item:hover {
+    transform: scale(1.05); /* Scale the box on hover */
+}
+
+
+footer {
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+    background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
