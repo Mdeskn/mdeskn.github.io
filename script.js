@@ -1,18 +1,9 @@
+// Define topFunction globally
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 $(document).ready(function() {
-    
-    // Smooth scrolling for navbar links
-    $('a.nav-link').on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            var headerHeight = $('header').outerHeight();
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - headerHeight
-            }, 800, function() {
-                window.location.hash = hash;
-            });
-        }
-    });
 
 
     // Assign active class to nav links while scrolling
@@ -25,7 +16,10 @@ $(document).ready(function() {
                 $('.navbar-nav a').eq(i).addClass('active');
             }
         });
-    }).scroll(); // Trigger scroll function on page load
+
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+    });
 
 });
-

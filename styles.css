@@ -116,8 +116,6 @@ header .container {
 }
 
 
-
-
 /* About Me Section */
 .about-section {
     position: relative;
@@ -129,7 +127,6 @@ header .container {
     box-sizing: border-box;
     text-align: center;
 }
-
 
 /* About Me Title */
 .about-section h4 {
@@ -150,6 +147,11 @@ header .container {
     border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
+}
+
+/* Text Justification */
+.about-text p {
+    text-align: justify;
 }
 
 
@@ -218,8 +220,32 @@ header .container {
     transition: transform 0.3s; /* Add transition for smooth scaling */
 }
 
+.education-item p {
+    text-align: justify;
+}
+
 .education-item:hover {
     transform: scale(1.05); /* Scale the box on hover */
+}
+
+#myBtn {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#myBtn:hover {
+    background-color: #555;
 }
 
 
@@ -241,3 +267,4 @@ footer {
     padding: 30px;
     text-align: center;
 }
+
