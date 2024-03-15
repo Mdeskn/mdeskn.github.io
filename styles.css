@@ -244,11 +244,9 @@ header .container {
     text-align: justify;
 }
 
-/* Compiled CSS for .education-item with drawing effect */
 .education-item {
   transition: color 0.25s 0.0833333333s;
   position: relative;
-  /* Rest of your .education-item styles */
 }
 
 .education-item::before,
@@ -275,13 +273,13 @@ header .container {
 }
 
 .education-item:hover {
-  color: #ffee10;
+  color: #de324c;
 }
 
 .education-item:hover::before,
 .education-item:hover::after {
   border-radius: 26px;
-  border-color: #ffee10;
+  border-color: #de324c;
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
   height: 100%;
@@ -297,28 +295,125 @@ header .container {
 
 
 .additional-boxes {
-    display: flex;
-    justify-content: space-between; /* Adjusted to evenly distribute space between boxes */
-    margin-top: 50px; /* Adjusted margin */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted grid layout */
+  gap: 32px;
+  padding: 30px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.additional-box {
+  position: relative;
+}
+
+.additional-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 26px;
+  background: linear-gradient(71deg, rgba(18, 16, 19, 0.06), rgba(255, 255, 255, 0.06), rgba(18, 16, 19, 0.06));
+}
+
+.additional-box h5 {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 20px; /* Added padding */
+  text-align: center; /* Centered text */
+}
+
+.additional-box p {
+  font-weight: 250;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 20px; /* Added padding */
+  text-align: center; /* Centered text */
+}
+
+
+.additional-box p a {
+  color: #55cdfc;
+  text-decoration: none;
+}
+
+.additional-box p a:hover {
+  text-decoration: underline;
+}
+
+.additional-box:hover::after {
+  transform: scale(1.05);
+}
+
+
+/* Projects Section */
+.projects-section {
+    position: relative;
     width: 100%;
     max-width: 1115.4px;
-    padding: 0 20px; /* Adjusted padding */
+    margin: 100px auto 0; /* Adjusted margin */
+    padding: 20px;
     box-sizing: border-box;
 }
 
-.additional-box {
-    width: 350px; /* Same width as education boxes */
+.projects-section h4 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 24px; /* Adjusted font size */
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+/* Projects Box */
+.projects-section .projects-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+}
+
+
+/* Project Item */
+.project-item {
     background: rgba(255, 255, 255, 0.06);
     border-radius: 26px;
-    padding: 20px;
-    margin: 20px;
+    padding: 20px; /* Added padding */
     text-align: center;
     transition: transform 0.3s; /* Add transition for smooth scaling */
 }
 
-.additional-box h5 {
-    font-weight: 300;
-    font-size: 16px;
+ul {
+    list-style-type: none;
+}
+
+.project-note {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+.project-note p:hover {
+    font-weight: bold;
+}
+
+
+/* Project Title */
+.project-item h5 {
+    font-weight: 400;
+    font-size: 20px;
     line-height: 24px;
     text-transform: capitalize;
     color: #FFFFFF;
@@ -326,7 +421,8 @@ header .container {
     padding-top: 20px;
 }
 
-.additional-box p {
+/* Project Description */
+.project-item p {
     font-weight: 250;
     font-size: 16px;
     line-height: 24px;
@@ -335,17 +431,390 @@ header .container {
     margin: 0;
 }
 
-.additional-box p a {
+/* Project Links */
+.project-item a {
     color: #55cdfc;
     text-decoration: none;
 }
 
-.additional-box p a:hover {
+.project-item p a:hover {
     text-decoration: underline;
 }
 
-.additional-box:hover {
-    transform: scale(1.05); /* Scale the box on hover */
+.project-item {
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.project-item::before,
+.project-item::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.project-item::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.project-item::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.project-item:hover {
+  color: #f4895f;
+}
+
+.project-item:hover::before,
+.project-item:hover::after {
+  border-radius: 26px;
+  border-color: #f4895f;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.project-item:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.project-item:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+/* Certificates Section */
+.certificates-section {
+    position: relative;
+    width: 100%;
+    max-width: 1115.4px;
+    margin: 100px auto 0; /* Adjusted margin */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.certificates-section h4 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 24px; /* Adjusted font size */
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+/* Certificates Box */
+.certificates-section .certificates-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+}
+
+/* Certificate Item */
+.certificate-item {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 26px;
+    padding: 20px; /* Added padding */
+    text-align: center;
+    transition: transform 0.3s; /* Add transition for smooth scaling */
+    position: relative;
+}
+
+/* Certificate Image */
+.certificate-img img {
+    max-width: 100%; /* Set maximum width to ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 16px; /* Adjust border-radius to match the container */
+    margin-bottom: 15px; /* Add margin bottom for spacing */
+}
+
+/* Certificate Title */
+.certificate-item h3 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* Certificate Description */
+.certificate-item p {
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* Certificate Links */
+.certificate-item a {
+    color: #55cdfc;
+    text-decoration: none;
+}
+
+.certificate-item p a:hover {
+    text-decoration: underline;
+}
+
+.certificate-item::before,
+.certificate-item::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.certificate-item::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.certificate-item::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.certificate-item:hover {
+  color: #f8e16f;
+}
+
+.certificate-item:hover::before,
+.certificate-item:hover::after {
+  border-radius: 26px;
+  border-color: #f8e16f;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.certificate-item:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.certificate-item:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+/* Skills Section */
+.skills-section {
+    position: relative;
+    width: 100%;
+    max-width: 1115.4px;
+    margin: 100px auto 0; /* Adjusted margin */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.skills-section h4 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 24px; /* Adjusted font size */
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+/* Skills Box */
+.skills-section .skills-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+}
+
+/* Skills Item */
+.skills-item {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 26px;
+    padding: 20px; /* Added padding */
+    text-align: center;
+    transition: transform 0.3s; /* Add transition for smooth scaling */
+    position: relative;
+}
+
+.skills-item h3 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.skills-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-item li {
+    font-weight: 250;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin-bottom: 5px; /* Added margin bottom for list items */
+}
+
+.skills-item::before,
+.skills-item::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.skills-item::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+
+.skills-item::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+
+.skills-item:hover {
+    color: #95cf92;
+}
+
+.skills-item:hover::before,
+.skills-item:hover::after {
+    border-radius: 26px;
+    border-color: #95cf92;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}
+
+.skills-item:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+}
+
+.skills-item:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+}
+
+.languages-spoken-section {
+    width: 100%;
+    max-width: 1040px; /* Adjust max-width as needed */
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #33333359; /* Background color for the section */
+    border-radius: 26px;
+}
+
+.languages-spoken-section .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.languages-spoken-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Text color for the title */
+}
+
+.languages-spoken-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.language-item {
+    background-color: #555; /* Background color for each language item */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    max-width: 300px; /* Adjust max-width as needed */
+}
+
+.language-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff; /* Text color for language name */
+}
+
+.language-item p {
+    font-size: 16px;
+    color: #ccc; /* Text color for proficiency details */
+}
+
+.language-item:hover {
+    background-color: #777; /* Background color on hover */
+}
+
+.language-item:hover h3 {
+    font-weight: bold; /* Bold font on hover */
+}
+
+.contact-section {
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.end-note {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-item {
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item img {
+    width: 50px; /* Adjust icon size as needed */
+    height: 50px; /* Adjust icon size as needed */
+}
+
+.contact-item p {
+    margin-top: 5px;
 }
 
 
