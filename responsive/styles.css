@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000000;
+      color: #fff;
+      line-height: 1.6;
+  }
+  
+  /* Add your CSS styles here */
+  /* Header Styles */
+  header {
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+    background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Higher than the z-index of any other content */
+    display: flex;
+    justify-content: space-between; /* Space out items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px;
+  }
+  
+  .logo {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background-color: #7a7a7a;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  .dropdown-menu.active {
+    display: block;
+  }
+  
+  .dropdown-item {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ffffff;
+  }
+  
+  .menu-btn {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    display: block;
+  }
+  
+  .menu-btn:focus {
+    outline: none;
+  }
+  
+  .menu-icon {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-btn.open .menu-icon:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-btn.open .menu-icon:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-btn.open .menu-icon:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Ensure the rest of your page content starts below the fixed navbar */
+  body {
+    padding-top: 4rem; /* Height of the navbar */
+  }
+  
+  html {
+    scroll-padding-top: 4rem; /* This should be equal to or greater than the header's height */
+  }
+  
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Sections */
+  .section {
+      padding: 2rem;
+      margin-bottom: 1rem;
+  }
+  
+  .section h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+  }
+  
+  .section .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+  }
+  
+  .section .content div {
+      flex: 1;
+      min-width: 250px;
+      background-color: #0f0f0f;
+      padding: 1rem;
+      border-radius: 26px;
+  }
+
+  .end-note{
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    text-decoration: none;
+    color: #6f6f6f;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .contact-item img {
+    width: 40px; /* Adjust icon size as needed */
+    height: 40px; /* Adjust icon size as needed */
+  }
+  
+  .contact-item p {
+    margin-top: 5px;
+  } 
+  .contact {
+    margin-bottom: 10%;
+  }
+  /* Footer */
+  footer {
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+    background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer p {
+      color: #888;
+  }
+
+  /* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 24px;
+  }
+
+  .dropdown-menu {
+    top: 4rem;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .dropdown-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dropdown-menu li {
+    text-align: center;
+  }
+
+  .menu-btn {
+    position: absolute;
+    right: 20px;
+  }
+
+  .menu-icon {
+    background: #fff;
+  }
+
+  header {
+    padding: 0 10px;
+  }
+
+}  
