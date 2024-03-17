@@ -23,9 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get the button
   let mybutton = document.getElementById("myBtn");
 
-  // Assign active class to nav links while scrolling
   $(window).scroll(function() {
     var scrollDistance = $(window).scrollTop();
-    // You can add your scrolling functionality here if needed
   });
 });
