@@ -39,15 +39,16 @@
   }
   
   .logo {
-    font-size: 32px;
-    font-weight: 600;
-    margin: 0;
+      font-size: 36px;
+      font-weight: 900;
+      margin: 0;
   }
-  
+
   .logo a {
-    color: #fff;
-    text-decoration: none;
+      color: #fff;
+      text-decoration: none;
   }
+
   
   .dropdown-menu {
     position: absolute;
