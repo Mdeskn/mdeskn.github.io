@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
       dropdownMenu.classList.remove('active');
     }
   });
-});
 
-$(document).ready(function() {
+  // Get the button
+  let mybutton = document.getElementById("myBtn");
+
   // Assign active class to nav links while scrolling
   $(window).scroll(function() {
     var scrollDistance = $(window).scrollTop();
-    // Get the button
-    let mybutton = document.getElementById("myBtn");
-    // You can add more functionality here if needed
+    // You can add your scrolling functionality here if needed
   });
 });
