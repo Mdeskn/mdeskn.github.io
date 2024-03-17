@@ -1,3 +1,8 @@
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.querySelector('.menu-btn');
   const dropdownMenu = document.querySelector('.dropdown-menu');
