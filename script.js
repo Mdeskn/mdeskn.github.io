@@ -4,11 +4,12 @@ function topFunction() {
 }
 
 $(document).ready(function() {
-    // Function to check screen width and redirect
+    // Function to check screen width and redirect if necessary
     function checkScreenWidthAndRedirect() {
-        if ($(window).width() < 768) {
+        // Check if the current URL is not the target URL
+        if (window.location.pathname !== "/responsive/index.html" && $(window).width() < 768) {
             window.location.href = "responsive/index.html";
-        } else {
+        } else if (window.location.pathname !== "/index.html" && $(window).width() >= 768) {
             window.location.href = "index.html";
         }
     }
